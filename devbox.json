@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/main/.schema/devbox.schema.json",
+  "packages": [
+    "hugo@0.135.0"
+  ],
+  "shell": {
+    "scripts": {
+      "serve": "hugo serve"
+    }
+  }
+}
