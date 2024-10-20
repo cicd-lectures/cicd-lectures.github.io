@@ -1,0 +1,46 @@
+name: Main workflow
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Install devbox environment
+        uses: jetify-com/devbox-install-action@v0.11.0
+      - name: Setup Github Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name:  Build Website
+        run: |
+          devbox run -- hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

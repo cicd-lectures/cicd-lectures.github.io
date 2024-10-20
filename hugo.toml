@@ -1,0 +1,28 @@
+baseURL = 'https://cicd-lectures.github.io/'
+languageCode = 'fr-FR'
+title = 'Introduction au CI/CD'
+theme = ["github.com/dzello/reveal-hugo"]
+
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
+[params.reveal_hugo]
+theme = "solarized"
+history = true
+slide_number = true
+transition = 'slide'
+transition_speed = 'fast'
+highlight_theme = "zenburn"
+custom_theme = "custom-theme.scss"
+custom_theme_compile = true
+width = 1280
+height = 800
+
+[params.reveal_hugo.templates.invert]
+background-color = "#f8e482"
+
+[markup.goldmark.renderer]
+unsafe= true
+
