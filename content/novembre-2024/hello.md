@@ -15,9 +15,9 @@ weight = 20
 
 - Senior Software Engineer @[Voi](https://voi.com) 🛴
 - Me contacter
-  - ✉  jlevesy \<chez\> gmail.com
-  - [LinkedIn](https://www.linkedin.com/in/julien-levesy-5b80ab149/)
-  - [GitHub](https://github.com/jlevesy)
+  - {{< icon familly="solid" name="envelope" >}}jlevesy \<chez\> gmail.com
+  - {{< icon familly="brands" name="linkedin" >}}[LinkedIn](https://www.linkedin.com/in/julien-levesy-5b80ab149/)
+  - {{< icon familly="brands" name="github" >}}[GitHub](https://github.com/jlevesy)
 
 
 ---
