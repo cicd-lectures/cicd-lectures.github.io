@@ -26,3 +26,5 @@ background-color = "#f8e482"
 [markup.goldmark.renderer]
 unsafe= true
 
+[markup.goldmark.extensions]
+linkify = false
