@@ -49,7 +49,7 @@ Nous avons besoin d'un interpréteur pour exécuter notre code Javascript
 - Environement d'exécution Javascript libre et multi platforme 
 - Basé sur V8
 - Possède une vaste librairie standard
-- Optimisé pour les opérations asyncrhones
+- Optimisé pour les opérations asynchrones
 - Actuellement en version 23
 
 ---
@@ -384,7 +384,7 @@ Les fonctions peuvent etre manipulées comme des valeurs
 ```js
 function otherFunction(callback) {
   // do something...
-  const result := getResult();
+  const result = getResult();
   callback(result);
 }
 
@@ -423,7 +423,7 @@ Syntaxe allégée pour déclarer et implémenter une fonction.
 ```js
 function otherFunction(callback) {
   // do something...
-  const result := getResult();
+  const result = getResult();
   callback(result);
 }
 
@@ -609,6 +609,42 @@ myCar.wheels // Utilise l'accesseur!
 
 ---
 
+## Un petit mot au sujet de `this`
+
+- `this` est une référence vers l'objet courant dans une méthode
+- En dehors d'un objet, `this` pointe vers "l'objet global" 
+- Pour une fonction de this valeur de **this est déterminée au moment de l'appel de la fonction**
+
+```js
+function Car() {
+  this.honk = function() {
+    console.log("HONK HONK");
+  };
+
+  setTimeout(function() {
+    this.honk(); // TypeError: this.honk is not a function WAAAAAAAT?
+  }, 2000);
+}
+```
+
+---
+
+Ce comportement (peu intuitif) change avec les arrow functions, this est hérité du scope de l'appelant!
+
+```js
+function Car() {
+  this.honk = function() {
+    console.log("HONK HONK");
+  };
+
+  setTimeout(() => {
+    this.honk();
+  }, 2000);
+}
+```
+
+---
+
 ## Gestion d'erreur
 
 Javascript représente une erreur a l'aide d'exceptions:
@@ -628,6 +664,19 @@ try {
 } finally {
   console.info("Show must go on! Let's proceed anyway!");
 }
+```
+
+---
+
+## Interpolation de chaines de caractères
+
+On peut faire de l'interpolation de chaines de caractères en utilisant les backticks
+
+```js
+const age = 12;
+const message = `Your age is ${age}`;
+
+console.log(message); // Your age is 12
 ```
 
 ---
@@ -671,7 +720,7 @@ srv.listen(3000, "localhost", () => {
 
 ## Modules Javascript
 
-- En js, un fichier est égal a un module
+- En JS, un fichier est égal a un module
 - Deux standards existent
   - `CommonJS`: Venant de l'ecosystème NodeJS
   - `MJS`: Standardisé par ECMA
@@ -703,7 +752,7 @@ const myCar = new Car()
 
 ## 🎓 Exercice: Déplacez votre serveur HTTP dans un module
 
-1. Groupez la logique de votre serveur dans une fonction dédée
+1. Groupez la logique de votre serveur dans une fonction dédiée
 2. Déplacez cette fonction dans un nouveau module JS (nouveau fichier) qui export cette fonction.
 3. Importez votre module dans votre script index.js
 
@@ -755,9 +804,9 @@ console.log("Done with index.js");
 
 - `Done with index.js` est affichée avant!
 - Pourquoi?
-  - `Server.listen` est une opération **asyncrhone**
+  - `Server.listen` est une opération **asynchrone**
   - Cette opération crée un socket et écoute dessus, cela utilise un (ou plusieurs) appels système bloquants
-    - **Problème** : `nodejs` n'utilise qu'un seul processus, si l'on effectue une opération bloquante de façon synchrone, le reste de notre application ne pourra plus s'exécuter pendant la durée de cette opération!
+    - **Problème** : `nodejs` n'utilise qu'un seul thread, si l'on effectue une opération bloquante de façon synchrone, le reste de notre application ne pourra plus s'exécuter pendant la durée de cette opération!
     - **Solution**: `nodejs` ne bloque pas sur les appels systèmes, mais enregistre le fait qu'il faut appeler une fonction dite **callback** passée en argument quand l'opération bloquante est terminée!
 
 ---
