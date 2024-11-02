@@ -97,7 +97,6 @@ git add .
 
 # On crée un nouveau commit
 git commit -m "Add initial vehicle-server project files"
-```
 
 ---
 
