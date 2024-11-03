@@ -40,21 +40,22 @@ Un cas d'utilisation majeur est de permettre aux utilisateurs de trouver un véh
 ## Contexte (4/4)
 
 * Voi est entrain de reconstruire cette fonctionnalité et à décidé de sous-traiter le développement de ce projet a l'ENSG...
-* Une équipe technique de **Voi** avait commencé l'implémentation du serveur, et vous à mis à disposition une archive [TODOLINK](link), contenant le code source du projet.
+* Une équipe technique de **Voi** avait commencé l'implémentation du serveur, et vous à mis à disposition une archive [ici](https://cicd-lectures.github.io/assets/vehicle-server.tar.gz), contenant le code source du projet.
 
 ---
 
 ## Prise en Main du Projet
 
 ```bash
-# Création du répertoire vehicle-server
-mkdir -p /workspace/vehicle-server && cd /workspace/vehicle-server
+cd /workspace
 
 # Téléchargez le projet sur votre environnement de développement
-curl -sSLO https://cicd-lectures.github.io/slides/main/media/vehicle-server.tar.gz
+curl -sSLO https://cicd-lectures.github.io/assets/vehicle-server.tar.gz
 
 # Décompresser et extraire l'archive téléchargée
 tar xvzf ./vehicle-server.tar.gz
+
+cd ./vehicle-server-ts
 ```
 
 A partir de la vous pouvez ouvrir le fichier `README.md` et commencer à suivre ses instructions.
@@ -70,24 +71,32 @@ A partir de la vous pouvez ouvrir le fichier `README.md` et commencer à suivre 
 ## Triste Rencontre avec la Réalité
 
 - Pas de gestion de version
-- Le projet ne fonctionne pas complètement, delete réponds un erreur 😭
-- Il suffirait de l'implémenter
-- ... sauf que vous ne pouvez pas compiler le projet!
+- `node_modules` nous est fourni tel quel, aucun moyen de le reconstruire.
+- Le projet ne fonctionne pas complètement,
+  - delete réponds un erreur 😭
+  - create accepte un shortcode de 6 caractères, et en demande 4!
+- On lance le js directmeent depuis `dist`...mais on ne sait pas le générer!
 
 ---
 
 ## 🎓 Exercice : Initialisez un dépôt git
 
-- Supprimez le répertoire `dist` et l'archive
+- Supprimez les répertoires `dist`, `node_modules` et l'archive
+- Mettez en place un fichier `.gitignore` qui vous évitera de comitter `dist/` et `node_modules`!
 - Initialisez un dépôt git dans le répertoire
-- Créez un premier commit, avec le code source Typescript
+- Créez un premier commit, avec uniquement le code source Typescript
 
 ---
 
 ## ✅ Solution : Initialisez un dépôt git
 
 ```bash
-rm -f dist/ vehicle-server.tar.gz
+# Suppression des fichiers générés
+rm -f /workspace/vehicle-server.tar.gz
+rm -rf ./dist ./node_modules
+
+# Création et édition du fichier .gitignore
+code .gitignore
 
 # On initialise un nouveau dépôt git
 git init
@@ -97,6 +106,14 @@ git add .
 
 # On crée un nouveau commit
 git commit -m "Add initial vehicle-server project files"
+```
+
+Contenu du fichier `.gitignore`
+
+```
+node_modules/
+dist/
+```
 
 ---
 
