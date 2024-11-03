@@ -40,7 +40,7 @@ Un cas d'utilisation majeur est de permettre aux utilisateurs de trouver un véh
 ## Contexte (4/4)
 
 * Voi est entrain de reconstruire cette fonctionnalité et à décidé de sous-traiter le développement de ce projet a l'ENSG...
-* Une équipe technique de **Voi** avait commencé l'implémentation du serveur, et vous à mis à disposition une archive [TODOLINK](link), contenant le code source du projet.
+* Une équipe technique de **Voi** avait commencé l'implémentation du serveur, et vous à mis à disposition une archive [ici](https://cicd-lectures.github.io/assets/vehicle-server.tar.gz), contenant le code source du projet.
 
 ---
 
@@ -51,7 +51,7 @@ Un cas d'utilisation majeur est de permettre aux utilisateurs de trouver un véh
 mkdir -p /workspace/vehicle-server && cd /workspace/vehicle-server
 
 # Téléchargez le projet sur votre environnement de développement
-curl -sSLO https://cicd-lectures.github.io/slides/main/media/vehicle-server.tar.gz
+curl -sSLO https://cicd-lectures.github.io/assets/vehicle-server.tar.gz
 
 # Décompresser et extraire l'archive téléchargée
 tar xvzf ./vehicle-server.tar.gz
