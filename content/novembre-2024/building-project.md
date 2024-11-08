@@ -113,12 +113,25 @@ Nous souhaitons que notre livrable soit:
 
 ---
 
-## Les grandes étapes de la génération de notre livrable. 🎯
+## Les grandes étapes de la génération de notre livrable
 
 1. `build`: Compilation de l'application
 2. `lint`: Analyse statique de code pour détecter des problèmes ou risques
 3. `test`: Exécution de la suite de tests automatisées
 4. `package`: Création du livrable
 5. `release`: Livraison du livrable
+
+---
+
+## Checkpoint 🎯
+
+Notre première étape va etre de faire en sorte de pouvoir lancer le serveur dans notre environment de développement.
+
+<br/>
+
+Cela sigifie:
+
+1. Installer toutes les dépendances nécesaires pour la génération et l´exécution de notre code
+2. Générer du code exécutable (appeler `tsc`)
 
 {{% /section %}}
