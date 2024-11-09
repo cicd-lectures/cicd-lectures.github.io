@@ -8,8 +8,6 @@ weight = 100
 
 ## La Gestion de Dépendances
 
-🇺🇸 Dependency Management
-
 ---
 
 ## Pourquoi réutiliser du code et des outils?
@@ -118,7 +116,7 @@ Mais le pire, c'est que c'est un problème récursif! Nos dépendances ont aussi
 - Fichier décrivant un `paquet` npm
 - Contient des métadonées a propos du paquet
 - Et surtout, la liste des paquets dont dépends notre projet!
-  - Ses dépendances directes
+  - ℹ️Ses dépendances directes
 
 ---
 
