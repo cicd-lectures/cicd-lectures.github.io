@@ -1,0 +1,41 @@
+{{- if strings.Contains (.Get "tags") "common" -}}
+name: Bonjour
+on:
+  - push
+jobs:
+  dire_bonjour:
+    runs-on: ubuntu-22.04
+{{- if strings.Contains (.Get "tags") "container" }}
+    container:
+      image: ghcr.io/cicd-lectures/gitpod:latest
+      options: --user=root
+{{- end }}
+    steps:
+{{- end -}}
+{{- if strings.Contains (.Get "tags") "simple-hello" }}
+      - run: echo "Bonjour 👋"
+{{- end }}
+{{- if strings.Contains (.Get "tags") "checkout" }}
+      - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
+{{- end }}
+{{- if strings.Contains (.Get "tags") "show-readme" }}
+      - run: ls -l # Liste les fichier du répertoire courant
+      - run: cat README.md # Affiche le contenu du fichier `README.md` à la base du dépôt
+{{- end }}
+{{- if strings.Contains (.Get "tags") "apt-cowsay" }}
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+{{- end }}
+{{- if strings.Contains (.Get "tags") "run-cowsay" }}
+      - run: cat README.md | cowsay
+{{- end }}
+{{- if strings.Contains (.Get "tags") "gha-cowsay" }}
+      - uses: juliangruber/read-file-action@v1
+        id: readfile
+        with:
+          path: ./README.md
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message: {{ "${{ steps.readfile.outputs.content }}" }}
+{{- end }}

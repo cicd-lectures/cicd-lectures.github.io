@@ -1,0 +1,28 @@
+name: Vehicle Server CI
+on:
+  - push
+{{- if strings.Contains (.Get "tags") "pr" }}
+  - pull_request
+{{- end }}
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Setup Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.17.x'
+      - name: Check Node Version
+        run: node --version
+{{- if strings.Contains (.Get "tags") "ci" }}
+      - name: Run Tests
+        run: npm run test
+      - name: Run Lint
+        run: npm run lint
+{{- end }}
+      - name: Build application
+        run: npm run build
+      - name: List dist output
+        run: ls dist/

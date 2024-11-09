@@ -1,0 +1,10 @@
+{{- $source := .Get "src" }}
+{{- $tags := .Get "tags" }}
+{{- with resources.Get $source }}
+{{- $out := printf "%s/%s-%s.%s" (path.Dir $source) (path.BaseName $source) ($tags | md5) (path.Ext $source) }}
+{{- with resources.ExecuteAsTemplate $out $ . }}
+{{- .Content | safeHTML  }}
+{{- end }}
+{{- else }}
+  {{ errorf "Could not get resource at %q" (.Get "src") }}
+{{- end }}
