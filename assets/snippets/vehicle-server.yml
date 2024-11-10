@@ -16,13 +16,15 @@ jobs:
           node-version: '20.17.x'
       - name: Check Node Version
         run: node --version
-{{- if strings.Contains (.Get "tags") "ci" }}
-      - name: Run Tests
-        run: npm run test
+      - name: Build application
+        run: npm run build
+{{- if strings.Contains (.Get "tags") "lint" }}
       - name: Run Lint
         run: npm run lint
 {{- end }}
-      - name: Build application
-        run: npm run build
+{{- if strings.Contains (.Get "tags") "test" }}
+      - name: Run Tests
+        run: npm run test
+{{- end }}
       - name: List dist output
         run: ls dist/
