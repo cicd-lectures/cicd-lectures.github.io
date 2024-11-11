@@ -104,7 +104,7 @@ Mais le pire, c'est que c'est un problème récursif! Nos dépendances ont aussi
 
 ## 🎓 Exercice: Initialisez un nouveau paquet NPM
 
-- Dans le répertoire `/workspace/vehicle-server-ts`
+- Dans le répertoire `/workspace/vehicle-server`
   - Lancez la comande `npm init`
   - Répondez aux questions posées
 - Observez ensuite le fichier généré
