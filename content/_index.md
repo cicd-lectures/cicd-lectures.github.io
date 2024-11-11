@@ -8,3 +8,4 @@ weight = 1
 - [Cours de Novembre 2024]({{% ref "./novembre-2024" %}})
 - [Années précédentes](https://cicd-lectures.github.io/slides)
 
+{{< buildinfo >}}

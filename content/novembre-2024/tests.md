@@ -359,6 +359,10 @@ expect(resp.gotJson).toEqual({
 
 ---
 
+Pensez a exécuter `npm lint` et a comitter une fois que le `lint` passe.
+
+---
+
 ## Le périmètre testé est-il satisfaisant?
 
 - La suite de tests qui vient de casser teste la logique de validation de la requête reçue.
@@ -442,7 +446,7 @@ Dans notre cas, pour réaliser un test d'intégration il va nous falloir
 Pour nous simplifier la tấche, on se propose d'utiliser les librairies suivantes:
 
 - [ladjs/supertest](https://github.com/ladjs/supertest) abstrait le démarage, la configuration et l'envoi de requêtes HTTP a l'application charge
-- [@testcontainers/postgres](https://testcontainers.com/modules/postgresql/?language=nodejs) qui permet en quelque lignes de démarer et d'arreter un serveur postgresql dans un container Docker.
+- [@testcontainers/postgresql](https://testcontainers.com/modules/postgresql/?language=nodejs) qui permet en quelque lignes de démarer et d'arreter un serveur postgresql dans un container Docker.
 
 
 🎓 Exercice: En suivant la documentation, installez ces dépendances!
@@ -515,7 +519,71 @@ curl localhost:8080/vehicles | jq .
 
 ---
 
+- La fonction `newVehicleFromRow` mélange la longitude avec la latitude (L90-91)
+- Faites la correction, mais essayons d'écrire un test d'intégration pour que cela ne se reproduise plus!
 
+---
+
+## 🎓 Exercice: Complétez le test d'intégration
+
+- Avec le jeu de données suivant
+
+```ts
+await dbConn.query(
+  `INSERT INTO vehicle_server.vehicles (shortcode, battery, position) VALUES
+    ('abcd', 94, ST_GeomFromText('POINT(-71.060316 48.432044)')),
+    ('cdef', 20, ST_GeomFromText('POINT(-70.060316 49.432044)')),
+    ('ghij', 59, ST_GeomFromText('POINT(-74.060316 49.432044)'));
+  `
+);
+```
+
+- Lancez une requête `GET /vehicles` notre app en utilisant supertest
+- Et validez que la liste de véhicules répondus est correcte
+- [Voici un exemple d'utilisation de supertest](https://github.com/ladjs/supertest/blob/master/README.md?plain=1#L160)
+
+---
+
+## ✅ Solution: Complétez le test d'intégration
+
+```ts
+{{< snippet src="snippets/it-boilerplate.ts" tags="testgetbody" >}}
+```
+
+---
+
+- N'oubliez pas de vérifier ce que dit `npm run lint` et de corriger les problèmes reportés!
+- Une fois que le lint est au vert, n'oubliez pas de créer un commit!
+
+---
+
+## 🎓 Exercice: Activez les tests dans votre CI et créez vous une PR
+
+
+- Rajoutez un commit sur votre branch qui change votre workflow de ci pour qu'à chaque build `npm run test` soit exécuté après le lint!
+- Ensuite créez vous une PR avec votre branche!
+- Vous devriez voir votre job de CI vert et vos tests exécutés
+
+---
+
+## ✅ Solution: Activez les tests dans votre CI
+
+```yaml
+{{< snippet src="snippets/vehicle-server.yml" tags="pr,lint,test">}}
+```
+
+---
+
+## Checkpoint 🎯
+
+Nous avons maintenant un moyen systèmatique de vérifier que la logique de notre application est correcte!
+
+- ❌ Ce n'est pas gratuit, il existe différentes stratégies de tests avec chacunes leurs avantages et inconvenients...
+  - Test unitaires, faciles a écrire, rapides et précis
+  - Tests d'intégration, plus lourds et complexes, mais capable de tester l'intégralié de l'application
+- ⚖️ ... et la nécessité d'avoir une stratégie équilibrée: la pyramide des tests!
+
+🎉 Vous pouvez merger votre PR!
 
 {{% /section %}}
 
