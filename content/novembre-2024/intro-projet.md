@@ -55,7 +55,7 @@ curl -sSLO https://cicd-lectures.github.io/assets/vehicle-server.tar.gz
 # Décompresser et extraire l'archive téléchargée
 tar xvzf ./vehicle-server.tar.gz
 
-cd ./vehicle-server-ts
+cd ./vehicle-server
 ```
 
 A partir de la vous pouvez ouvrir le fichier `README.md` et commencer à suivre ses instructions.

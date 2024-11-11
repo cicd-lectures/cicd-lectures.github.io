@@ -128,7 +128,7 @@ Vous deviez obtenir ce message d'erreur!
 ```bash
 No tests found, exiting with code 1
 Run with `--passWithNoTests` to exit with code 0
-In /workspace/vehicle-server-ts
+In /workspace/vehicle-server
   23 files checked.
   testMatch: **/__tests__/**/*.[jt]s?(x), **/?(*.)+(spec|test).[tj]s?
 ```
