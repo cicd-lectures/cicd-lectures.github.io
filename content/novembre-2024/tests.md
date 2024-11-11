@@ -297,10 +297,10 @@ La méthode handle à jeté une `AppError`! Notre test mets en évidence notre b
 
 ---
 
-## 🎓 Exercice: Valider la réponse!
+## 🎓 Exercice: Valider la réponse
 
-- Si l'on fait une requète correct, le controlleur écrit le status `200` dans la réponse
-- Le controlleur écrit aussi le véhicule créé dans le chanp `json` dans la réponse, il faudrait le valider!
+- Si l'on fait une requète correcte, le controlleur écrit le status `200` dans l'objet réponse
+- Le controlleur écrit aussi le véhicule créé dans le champ `json` dans la réponse, il faudrait le valider.
 - 🎓 Complétez le test de façon à ce qu'il vérifie que le contenu répondu corresponde a la requète!
   - 💡Vous pouvez accéder au contenu via `resp.gotJson`
   - 💡Le mock donnera toujours l'ID `12` au nouveau véhicule
@@ -309,7 +309,7 @@ La méthode handle à jeté une `AppError`! Notre test mets en évidence notre b
 
 ---
 
-## ✅ Solution: Valider la réponse!
+## ✅ Solution: Valider la réponse
 
 ```ts
 expect(resp.gotJson).toEqual({
@@ -521,6 +521,8 @@ curl localhost:8080/vehicles | jq .
 
 - La fonction `newVehicleFromRow` mélange la longitude avec la latitude (L90-91)
 - Faites la correction, mais essayons d'écrire un test d'intégration pour que cela ne se reproduise plus!
+- Nous allons écrire un test sur la fonctionnalité "trouver les vehicules les plus proches"
+  - `GET /vehicles?lat=xxx&long=xxx&limit=10`
 
 ---
 
