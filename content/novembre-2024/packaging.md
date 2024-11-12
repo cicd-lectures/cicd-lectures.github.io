@@ -506,4 +506,6 @@ Quelle est la taille de l'image?
 - Les images Docker ont une convention de nommage permettant d'identifier les images très précisément
 - Nous avons maintenant une image Docker pour distribuer notre serveur!
 
+Une fois que votre image fonctionne, vous pouvez ouvrir une PR avec ce Dockerifle et la merger
+
 {{% /section %}}

@@ -1,0 +1,16 @@
+# ...
+    steps:
+      # ... npm run build
+      # ... npm run lint
+      # ... npm run test
+      # ... Tag release!
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        if: contains('refs/heads/main', github.ref)
+        with:
+          username: xxxxx
+          password: {{ "${{ secrets.DOCKERHUB_TOKEN }}" }}
+      - name: Push if on `main` branch
+        if: contains('refs/heads/main', github.ref)
+        run: |
+          {{ "TAG=\"${{github.ref_name}}\"" }} npm run release
