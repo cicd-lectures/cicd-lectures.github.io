@@ -62,7 +62,7 @@ weight = 40
 
 - C'est un ordinateur distant sur lequel on se connecte via le navigateur
 - ⚠ Faites attention à réutiliser le même workspace tout au long de ce cours⚠
-- ⚠️ 10h c'est pas beaucoup 😭
+- ⚠️ ~10h c'est pas beaucoup~ 😭 En fait c'est 50h par défaut
 - ➡️ Suspendez le workspace GitPod des que vous ne l'utilisez pas
   - Bouton bleu en bas a gauche, sélectionnez "Suspend"
 

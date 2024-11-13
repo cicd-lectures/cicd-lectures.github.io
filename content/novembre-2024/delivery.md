@@ -14,7 +14,7 @@ Nous sommes prêts, il est grand temps de livrer notre v1.0.
 
 ---
 
-...mais c'est quoi notre production déjà?
+...mais c'est quoi l'objectif de notre livraison déjà?
 
 ---
 
@@ -162,10 +162,14 @@ jobs:
 
 - Changez votre workflow de CI de façon à ce que, sur un push de tag, les tâches suivantes soient effectuées :
   - Comme avant:  Build, Tests, Package
-  - SI c'est un tag, alors il faut pousser (et éventuellement reconstruire avec le bon nom) l'image sur le DockerHub
+  - Si c'est un tag, alors il faut créer et pousser l'image sur le DockerHub avec `npm run release`
 
 - 💡 Utilisez les GitHub Action suivantes :
   - [docker-login](https://github.com/marketplace/actions/docker-login)
+
+- 💡 Il vous faut aussi trouver la condition a appliquer pour exécuter une étape uniquement sur un push de tag
+- 💡 Ainsi que trouver le tag courant depuis le workflows
+  - [La réponse est dans ce workflow](https://github.com/jlevesy/prometheus-elector/blob/main/.github/workflows/ci.yaml)
 
 ---
 

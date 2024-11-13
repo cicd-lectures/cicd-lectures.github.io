@@ -404,7 +404,7 @@ Bon... pourquoi je vous embête avec tout ça?
 
 ## 🎓 Construire une Image du Vehicle Server
 
-- A partir de l'image de base NodeJS link:https://hub.docker.com/_/node[Node] construisez une image du vehicle-server
+- A partir de l'image de base [NodeJS](https://hub.docker.com/_/node) une image du vehicle-server
 - Il vous faut copier les sources avec l'instruction [COPY](https://docs.docker.com/reference/dockerfile/)
 - Compiler le serveur
 - Faire en sorte que le point d'entrée de l'image soit le serveur (en utilisant [ENTRYPOINT](https://docs.docker.com/reference/dockerfile/#entrypoint))

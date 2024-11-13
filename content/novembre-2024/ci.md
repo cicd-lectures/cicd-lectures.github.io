@@ -173,7 +173,7 @@ Un *Runner* est un serveur distant sur lequel s'exécute un job.
 
 - Mot clef `runs-on` dans la définition d'un job
 - Défaut : machine virtuelle Ubuntu dans le cloud utilisé par GitHub
-- https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners[D'autres types sont disponibles,window=_blank]
+- [D'autres types sont disponibles](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
 (macOS, Windows, etc.)
 - Possibilité de fournir [son propre serveur](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners)
 
