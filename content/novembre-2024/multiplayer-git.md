@@ -210,7 +210,7 @@ git switch --create fix-delete
 - Enfin il faut faire une réponse:
   - Si la suppression est réussie, répondre un status code 204 en appelant `res.status(xxx).send()`,
 
-N'oubliez pas de tester votre changementt en utilisant les exemples du fichier README!
+N'oubliez pas de tester votre changements en utilisant les exemples du fichier README!
 
 ---
 

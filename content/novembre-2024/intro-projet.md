@@ -75,7 +75,7 @@ A partir de la vous pouvez ouvrir le fichier `README.md` et commencer à suivre 
 - Le projet ne fonctionne pas complètement,
   - delete réponds un erreur 😭
   - create accepte un shortcode de 6 caractères, et en demande 4!
-- On lance le js directmeent depuis `dist`...mais on ne sait pas le générer!
+- On lance le js directement depuis `dist`...mais on ne sait pas le générer!
 
 ---
 
@@ -83,6 +83,7 @@ A partir de la vous pouvez ouvrir le fichier `README.md` et commencer à suivre 
 
 - Supprimez les répertoires `dist`, `node_modules` et l'archive
 - Mettez en place un fichier `.gitignore` qui vous évitera de comitter `dist/` et `node_modules`!
+  - 💡[doc](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files)
 - Initialisez un dépôt git dans le répertoire
 - Créez un premier commit, avec uniquement le code source Typescript
 

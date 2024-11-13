@@ -2,6 +2,7 @@ baseURL = 'https://cicd-lectures.github.io/'
 languageCode = 'fr-FR'
 title = 'Introduction au CI/CD'
 theme = ["github.com/dzello/reveal-hugo"]
+enableGitInfo = true
 
 [outputFormats.Reveal]
 baseName = "index"
@@ -28,3 +29,4 @@ unsafe= true
 
 [markup.goldmark.extensions]
 linkify = false
+

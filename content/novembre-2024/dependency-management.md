@@ -116,7 +116,7 @@ Mais le pire, c'est que c'est un problème récursif! Nos dépendances ont aussi
 - Fichier décrivant un `paquet` npm
 - Contient des métadonées a propos du paquet
 - Et surtout, la liste des paquets dont dépends notre projet!
-  - ℹ️Ses dépendances directes
+  - ℹ️ Ses dépendances directes
 
 ---
 
