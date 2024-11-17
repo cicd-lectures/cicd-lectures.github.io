@@ -51,7 +51,7 @@ Une requête est composée des champs suivant:
 
 Une réponse est composée des champs suivant:
 
-- {{< newtabref href="https://http.cat" title="D'un status code" >}} 🐱
+- [D'un status code](https://http.cat) 🐱
   - 200 OK, 404 Not Found, 301 Moved Permanently etc..
 - *Entêtes* (headers): Couple clé -> multiples valeurs indiquant des méta information sur la réponse (`Content-Length`, `Content-Encoding`,`Content-Type` ...)
 - *Un corps de réponse* à lire et à décoder
@@ -61,7 +61,7 @@ Une réponse est composée des champs suivant:
 
 ## Comment parler HTTP depuis le terminal?
 
-- On propose d'utiliser {{< newtabref href="https://curl.se/" title="cURL" >}}
+- On propose d'utiliser [cURL](https://curl.se/)
 - Outil pour transférer des données dans différents protocoles
   - Le couteau suisse des internets!
 

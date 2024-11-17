@@ -194,14 +194,14 @@ echo "${MA_VARIABLE}"
 echo ">> Contenu de /tmp :\n$(ls /tmp)"
 ```
 
-- Des `if`, des `for` et plein d'autres trucs {{< newtabref href="https://tldp.org/LDP/abs/html" title="(doc)" >}}
+- Des `if`, des `for` et plein d'autres trucs [(doc)]("https://tldp.org/LDP/abs/html")
 
 ---
 
 ## Codes de sortie
 
 - Chaque exécution de commande renvoie un code de retour (🇬🇧 "exit code")
-  - Nombre entier entre 0 et 255 (en {{< newtabref href="https://en.wikipedia.org/wiki/POSIX" title="POSIX" >}})
+  - Nombre entier entre 0 et 255 (en [POSIX]("https://en.wikipedia.org/wiki/POSIX"))
 - Ce code indique si la commande s'exécutée avec succes ou non
 - Code accessible dans la variable *éphémère* `$?` :
 
