@@ -16,11 +16,11 @@ weight = 70
 ## Javascript
 
 - Langage interprété, syntaxe proche du C
-- Dynamique (types des variables assigné // deviné á l'exécution)
+- Typage dynamique (types des variables assigné // deviné á l'exécution)
 - Gestion de la mémoire automatisée (avec un Garbage Collector)
-- Fonctions pouvant etre manipulées comme des variables
+- Fonctions pouvant être manipulées comme des variables
 - Supporte différents styles de programation (impératif, OO ou fonctionnel)
-- Pensé pour la concurence
+- Pensé pour l'évenementiel, la concurence
 
 ---
 

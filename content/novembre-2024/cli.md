@@ -110,6 +110,8 @@ Dans un terminal Unix/Linux/WSL :
 
 {{< figure src="/images/linux-directory-structure.png" width=800 >}}
 
+---
+
 - Le système de fichier a une structure d'arbre
   - La racine du disque dur c'est `/`
     - 🎓 `ls -l /`
@@ -199,8 +201,8 @@ echo ">> Contenu de /tmp :\n$(ls /tmp)"
 ## Codes de sortie
 
 - Chaque exécution de commande renvoie un code de retour (🇬🇧 "exit code")
-  - Nombre entier entre 0 et 255 (en {{< newtabref href="https://en.wikipedia.org/wiki/POSIX" title="POSIX" >}}
-- Ce code indique si la commande s'exécutée avec succes ou non 
+  - Nombre entier entre 0 et 255 (en {{< newtabref href="https://en.wikipedia.org/wiki/POSIX" title="POSIX" >}})
+- Ce code indique si la commande s'exécutée avec succes ou non
 - Code accessible dans la variable *éphémère* `$?` :
 
 ```bash

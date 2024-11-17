@@ -35,15 +35,15 @@ weight = 40
 
 1. Rendez vous sur {{< newtabref href="https://gitpod.io/login" title="https://gitpod.io/login" >}}
 2. Authentifiez vous en utilisant votre compte GitHub
-3. Continuez avec 10h (Si vous le pouvez connectez votre Linked In pour avoir 50h)
+3. Continuez avec 10h
 4. Selectionnez `VS Code Browser` comme éditeur
-5. Repondez n'importe quoi aux questions
+5. Repondez comme vous le souhaitez aux questions
 6. Vous devriez atterir sur {{< newtabref href="https://gitpod.io/workspaces" title="https://gitpod.io/workspaces" >}}
 
 <br/>
 <br/>
 
-⚠️  Ne vous authentifiez pas sur Gitpod Flex (https://app.gitpod.io) ⚠️  
+⚠️  Ne vous authentifiez pas sur Gitpod Flex (https://app.gitpod.io) ⚠️
 
 ---
 
@@ -62,10 +62,9 @@ weight = 40
 
 - C'est un ordinateur distant sur lequel on se connecte via le navigateur
 - ⚠ Faites attention à réutiliser le même workspace tout au long de ce cours⚠
-- ⚠️ ~10h c'est pas beaucoup~ 😭 En fait c'est 50h par défaut
+- ~⚠️  10h c'est pas beaucoup 😭~ En fait c'est 50h par défaut
 - ➡️ Suspendez le workspace GitPod des que vous ne l'utilisez pas
   - Bouton bleu en bas a gauche, sélectionnez "Suspend"
-
 
 ---
 

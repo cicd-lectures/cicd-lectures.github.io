@@ -159,7 +159,7 @@ Regardons d'un peu plus près les logs:
 - Contrôle de la méthode de la requête: `--request POST`, `--request DELETE`
 - Ajouter un header a la requête: `--header "Content-Type: application/json"`
 - Envoyer un body dans la requête:
-  - Directement depuis la ligne de commande `--data '{"some":"json"}`
+  - Directement depuis la ligne de commande `--data '{"some":"json"}'`
   - En lisant un ficher `--data '@some/local/file'`
 
 ---

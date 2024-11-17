@@ -149,7 +149,7 @@ const ages :Array<number> = [2, 3, 4]; // Equivalent, utilise un type parametriq
 
 ## Any
 
-`any` est un type spécial qui signifie tous les types. A éviter car on perds l'intérèt d'utilser typescript
+`any` est un type spécial qui signifie tous les types. A éviter car on perds l'intérèt d'utiliser typescript
 
 ```ts
 let foo :any = 4;
@@ -247,7 +247,7 @@ type User = {
   haircut?: string; // Haircut peut etre soit une string, soit undefined
 };
 
-const user :User = {name: "foo", age: 12};
+const user: User = {name: "foo", age: 12};
 
 console.log(user.haircut);
 
