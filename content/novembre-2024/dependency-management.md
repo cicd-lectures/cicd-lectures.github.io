@@ -147,7 +147,7 @@ Mais le pire, c'est que c'est un problème récursif! Nos dépendances ont aussi
 ## Visualiser l'arbre de dépendances
 
 - `npm ls` permets de lister les dépendances d'un projet (`--all` affiche tout l'arbre de dépendance!)
-- {{< newtabref href="https://npmgraph.js.org" title="Ce site">}} permets d'afficher l'arbre de dépendance d'un paquet public NPM
+- [Ce site]("https://npmgraph.js.org) permets d'afficher l'arbre de dépendance d'un paquet public NPM
 
 ---
 
