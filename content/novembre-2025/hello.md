@@ -13,7 +13,7 @@ weight = 20
 
 ## Julien Levesy
 
-- Senior Software Engineer @[ExaTrack](https://exatrack.com/) 🐛
+- Software Engineer @[ExaTrack](https://exatrack.com/) 🐛
 
 - Me contacter
   - {{< icon familly="solid" name="envelope" >}}jlevesy \<chez\> gmail.com
