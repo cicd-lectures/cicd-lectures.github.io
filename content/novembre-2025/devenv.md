@@ -104,6 +104,21 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 Connection to github.com closed.
 ```
 
+---
+
+### Configurer son identité dans git
+
+Git a besoin de connaitre votre identité pour fonctionner, pour la confiurer il faut jouer les commandes suivantes:
+
+```
+git config --global user.name "YOUR_NAME"
+git config --global user.email "YOUR_EMAIL"
+```
+
+💡 Si vous ne souhaitez pas publier votre adresse email, vous pouvez utiliser [l'adresse anomymisée fournie par GitHub](https://github.com/settings/emails)
+
+---
+
 {{% small %}}
 On peut commencer !
 {{% /small %}}
